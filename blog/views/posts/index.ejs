@@ -1,0 +1,25 @@
+<h2>Posts</h2>
+<section>
+    <% for (var i in posts) { %>
+        <% var post = posts[i]; %>
+        <article class="postShow">
+        <p><b><%= post.title %></b></p>
+        <small class="author">by<%= post.author?.username ?? "Anonymous" %></small>
+        <p><% include ../attachments/attachments %></p>
+        <nav>
+        <% if (locals.loginUser && (locals.loginUser.isAdmin || locals.loginUser.id === post.authorId)) { %>
+            <a href="/posts/<%= post.postId %>" class="button">Show</a>
+        <% } %>
+        <% if (locals.loginUser && (locals.loginUser.isAdmin || locals.loginUser.id === post.authorId)) { %>
+            <a href="/posts/<%= post.postId %>/edit" class="button">Edit</a>
+        <% } %>
+        <% if (locals.loginUser && (locals.loginUser.isAdmin || locals.loginUser.id === post.authorId)) { %>
+            <a href="/posts/<%= post.postId %>?_method=DELETE" onClick="return confirm('Delete: <%= post.title %>');" class="button">Delete</a>
+        <% } %>
+        </nav>                        
+        </article>
+    <% } %>
+</section>
+<% if (locals.loginUser) { %>
+    <a href="/posts/new" class="button">Create New post</a>
+<% } %>

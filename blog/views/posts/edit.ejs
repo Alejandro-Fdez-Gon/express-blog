@@ -1,0 +1,6 @@
+<body>
+    <h1>Edit Post:</h1>
+    <form method="post" action="/posts/<%= post.postId %>?_method=PUT" enctype="multipart/form-data" >
+        <% include _form.ejs %>
+    </form>
+</body>

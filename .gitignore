@@ -1,8 +1,10 @@
-node_modules
-.DS_Store
-.idea
+/node_modules
+/blog/node_modules
 blog.sqlite
+/blog/blog.sqlite
+*.sqlite-journal
 .env
-blog
+/blog/.env
 data
 user.json
+.DS_Store

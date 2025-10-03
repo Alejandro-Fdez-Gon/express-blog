@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header class="main" id="mainHeader">Blog</header>
+    
+    <nav>
+        <a href="/">Index</a>
+        <a href="/author">Author</a>
+        <a href="/posts">Posts</a>
+        <% if ((locals.loginUser) && (locals.loginUser.isAdmin)) { %>
+          <a href="/users">Users</a>
+        <% } %>
+    </nav>
+
+    <section>
+      <div>
+        <% if (!locals.loginUser) { %>
+            <a href="/login">Login</a>
+        <% } else { %>
+            <a href="/users/<%= loginUser.id %>"><%= loginUser.username %></a>
+            <a href="/login?_method=DELETE">Logout</a>
+        <% } %>
+    </div>
+
+      <div>
+        <%- body %>
+      </div>
+    </section>
+
+    <footer>
+        <address>
+            Posts
+        </address>
+    </footer>
+  </body>
+</html>

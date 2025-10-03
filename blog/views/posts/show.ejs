@@ -1,0 +1,10 @@
+<body>
+    <h2><%= post.title %></h2>
+    <% include ../attachments/attachments %>
+    <div>
+        <small id="author"> by <%= post.author?.username ?? "Anonymous" %> </small>
+    </div>    
+    <article class="postShow">
+        <%= post.body%>
+    </article> 
+</body>
