@@ -58,32 +58,32 @@ The server implements the following REST primitives, grouped by resource:
 Follow these steps to get the project running locally:
 
 1.  **Clone the Repository and Install Dependencies:**
-    ```bash
-    git clone <REPOSITORY_URL>
-    cd <REPOSITORY_NAME> # Or into the 'blog' subdirectory if applicable
-    npm install
-    ```
+ ```bash
+ git clone https://github.com/Alejandro-Fdez-Gon/express-blog.git
+ cd express-blog
+ npm install
+  ```
 
 2.  **Initialize the Database (SQLite):**
-    Run the migrations to create the required tables (`Posts`, `Attachments`, `Users`), followed by the seeders to populate the posts table with initial data.
+Run the migrations to create the required tables (`Posts`, `Attachments`, `Users`), followed by the seeders to populate the posts table with initial data.
 
-    *For Unix/Linux/macOS systems:*
-    ```bash
-    npm run migrate
-    npm run seed
-    ```
-    *For Windows systems:*
-    ```bash
-    npm run migrate_win
-    npm run seed_win
-    ```
+ *For Unix/Linux/macOS systems:*
+ ```bash
+ npm run migrate
+ npm run seed
+  ```
+ *For Windows systems:*
+ ```bash
+ npm run migrate_win
+ npm run seed_win
+ ```
 
-3.  **Start the Server:**
-    The server will start on port **3000**.
+4.  **Start the Server:**
+The server will start on port **3000**.
 
-    ```bash
-    npm start
-    ```
+```bash
+npm start
+```
 
-4.  **Access the Application:**
-    Open your web browser and navigate to: [http://localhost:3000](http://localhost:3000).
+6.  **Access the Application:**
+Open your web browser and navigate to: [http://localhost:3000](http://localhost:3000).
